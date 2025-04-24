@@ -1,4 +1,4 @@
-namespace CanvasCertificateGenerator.Services;
+namespace GraduationCertificateGenerator.Services;
 
 using PdfSharpCore.Pdf;
 using PdfSharpCore.Drawing;

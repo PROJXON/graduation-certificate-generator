@@ -1,5 +1,5 @@
-namespace CanvasCertificateGenerator;
-using CanvasCertificateGenerator.Services;
+namespace GraduationCertificateGenerator;
+using GraduationCertificateGenerator.Services;
 
 using System;
 using System.IO;

@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace CanvasCertificateGenerator;
+namespace GraduationCertificateGenerator;
 
 class Program
 {

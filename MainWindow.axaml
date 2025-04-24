@@ -3,8 +3,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="400"
-        x:Class="CanvasCertificateGenerator.MainWindow"
-        Title="Canvas Certificate Generator"
+        x:Class="GraduationCertificateGenerator.MainWindow"
+        Title="Graduation Certificate Generator"
         Width="600" Height="350">
     <StackPanel>
         <Grid Margin="10" ColumnDefinitions="Auto, Auto" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto" HorizontalAlignment="Center">
