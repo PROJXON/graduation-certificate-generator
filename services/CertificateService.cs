@@ -17,17 +17,17 @@ public class CertificateService
         gfx.DrawImage(background, 0, 0, page.Width, page.Height);
 
 
-        var smallFont = new XFont("Roboto", 26, XFontStyle.Regular);
-        var dateFont = new XFont("Roboto", 24, XFontStyle.Regular);
         var whiteBrush = XBrushes.White;
         var yellowBrush = new XSolidBrush(XColor.FromArgb(255, 215, 0));
 
-        // Draw the participant's name (max 1600 points wide)
-        var nameFont = FitTextToWidth(gfx, data.Participant, "Geologica", XFontStyle.Bold, 900, 90);
-        gfx.DrawString(data.Participant, nameFont, whiteBrush, new XPoint(1220, 980), XStringFormats.Center);
-        gfx.DrawString(data.EndDate.ToShortDateString(), dateFont, whiteBrush, new XPoint(1480, 1410), XStringFormats.Center);
-        gfx.DrawString($"This Certificate is presented to {data.Participant} for their outstanding completion of", smallFont, whiteBrush, new XPoint(1220, 1130), XStringFormats.Center);
-        gfx.DrawString($"the Momentum Internship Program as {data.Role} from {data.StartDate.ToShortDateString()} to {data.EndDate.ToShortDateString()}.", smallFont, whiteBrush, new XPoint(1220, 1170), XStringFormats.Center);
+        var smallFont = new XFont("Roboto", 30, XFontStyle.Regular);
+        var dateFont = new XFont("Roboto", 38, XFontStyle.Regular);
+        var nameFont = FitTextToWidth(gfx, data.Participant, "Geologica", XFontStyle.Bold, 900, 120);
+
+        gfx.DrawString(data.Participant, nameFont, whiteBrush, new XPoint(990, 1010), XStringFormats.Center);
+        gfx.DrawString($"This Certificate is presented to {data.Participant} for their outstanding completion of", smallFont, whiteBrush, new XPoint(990, 1160), XStringFormats.Center);
+        gfx.DrawString($"the Momentum Internship Program as {data.Role} from {data.StartDate.ToShortDateString()} to {data.EndDate.ToShortDateString()}.", smallFont, whiteBrush, new XPoint(990, 1200), XStringFormats.Center);
+        gfx.DrawString(data.EndDate.ToShortDateString(), dateFont, whiteBrush, new XPoint(1285, 1325), XStringFormats.Center);
 
         return document;
     }
