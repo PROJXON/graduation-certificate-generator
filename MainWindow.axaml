@@ -19,8 +19,8 @@
 
             <Label Grid.Row="7" Grid.Column="0" Margin="10" Name="pdfDestinationLabel">Pdf Destination:</Label>
             <Button Grid.Row="7" Grid.Column="1" Click="FileDestinationButton_OnClick" Name="pdfDestinationButton">Choose Folder...</Button>
-            <TextBlock Grid.Row="8" Grid.Column="0" Name="filePathDisplayLabel">Selected Destination:</TextBlock>
-            <TextBlock Grid.Row="8" Grid.Column="1" Name="filePathMessage"></TextBlock>
+            <TextBlock Grid.Row="8" Grid.Column="0" Name="filePathDisplayLabel" Margin="10">Selected Destination:</TextBlock>
+            <TextBlock Grid.Row="8" Grid.Column="1" Name="filePathMessage" Margin="10"></TextBlock>
         </Grid>
         <TextBlock Margin="5" Name="message" HorizontalAlignment="Center"></TextBlock>
         <Button Margin="5" Click="GeneratePdfButton_OnClick" HorizontalAlignment="Center">Generate</Button>
