@@ -14,13 +14,15 @@ public partial class MainWindow : Window
     public record CertificateData
     (
         string Participant,
-        DateTime Date,
+        DateTime StartDate,
+        DateTime EndDate,
         string Role
     );
 
     private string participant = "";
     private string role = "";
-    private DateTime date;
+    private DateTime startDate;
+    private DateTime endDate;
     private string fileName = "";
     private string fullFilePath = "";
     private string folderPath = "";
@@ -69,7 +71,7 @@ public partial class MainWindow : Window
                 return;
             }
 
-            CertificateData data = new(participant, date, role);
+            CertificateData data = new(participant, startDate, endDate, role);
             PdfDocument pdf = CertificateService.CreatePdf(data);
             fullFilePath = Path.Combine(folderPath, fileName);
             pdf.Save(fullFilePath);
@@ -87,7 +89,8 @@ public partial class MainWindow : Window
     private void GatherInput()
     {
         participant = participantName.Text ?? string.Empty;
-        date = completionDate.SelectedDate?.DateTime ?? DateTime.Today;
+        startDate = onboardingDate.SelectedDate?.DateTime ?? DateTime.Today;
+        endDate = completionDate.SelectedDate?.DateTime ?? DateTime.Today;
         fileName = $"{participant.Replace(" ", "_").ToLower()}_graduation_certificate.pdf";
         role = participantRole.Text ?? string.Empty;
     }
@@ -96,7 +99,7 @@ public partial class MainWindow : Window
     {
         MarkInvalidControls();
 
-        if (string.IsNullOrWhiteSpace(participant) || !completionDate.SelectedDate.HasValue)
+        if (string.IsNullOrWhiteSpace(participant) || !completionDate.SelectedDate.HasValue || !onboardingDate.SelectedDate.HasValue)
         {
             message.Text = "Please ensure that all required fields are filled out.";
             return false;
@@ -114,6 +117,7 @@ public partial class MainWindow : Window
     private void MarkInvalidControls()
     {
         participantName.Classes.Set("invalid", string.IsNullOrWhiteSpace(participant));
+        onboardingDate.Classes.Set("invalid", !onboardingDate.SelectedDate.HasValue);
         completionDate.Classes.Set("invalid", !completionDate.SelectedDate.HasValue);
         pdfDestinationButton.Classes.Set("invalid", string.IsNullOrWhiteSpace(folderPath));
     }

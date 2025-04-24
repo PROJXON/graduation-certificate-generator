@@ -25,11 +25,9 @@ public class CertificateService
         // Draw the participant's name (max 1600 points wide)
         var nameFont = FitTextToWidth(gfx, data.Participant, "Geologica", XFontStyle.Bold, 900, 90);
         gfx.DrawString(data.Participant, nameFont, whiteBrush, new XPoint(1220, 980), XStringFormats.Center);
-
-        gfx.DrawString(data.Participant, nameFont, whiteBrush, new XPoint(1220, 980), XStringFormats.Center);
-        gfx.DrawString(data.Date.ToShortDateString(), dateFont, whiteBrush, new XPoint(1480, 1410), XStringFormats.Center);
-        gfx.DrawString($"This Certificate is presented to {data.Participant} for their outstanding", smallFont, whiteBrush, new XPoint(1220, 1130), XStringFormats.Center);
-        gfx.DrawString($"completion of the Momentum Internship Program as {data.Role}.", smallFont, whiteBrush, new XPoint(1220, 1170), XStringFormats.Center);
+        gfx.DrawString(data.EndDate.ToShortDateString(), dateFont, whiteBrush, new XPoint(1480, 1410), XStringFormats.Center);
+        gfx.DrawString($"This Certificate is presented to {data.Participant} for their outstanding completion of", smallFont, whiteBrush, new XPoint(1220, 1130), XStringFormats.Center);
+        gfx.DrawString($"the Momentum Internship Program as {data.Role} from {data.StartDate.ToShortDateString()} to {data.EndDate.ToShortDateString()}.", smallFont, whiteBrush, new XPoint(1220, 1170), XStringFormats.Center);
 
         return document;
     }
