@@ -10,8 +10,6 @@
         <Grid Margin="10" ColumnDefinitions="Auto, Auto" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto" HorizontalAlignment="Center">
             <Label Grid.Row="0" Grid.Column="0" Margin="10">Participant Name:</Label>
             <TextBox Grid.Row="0" Grid.Column="1" Margin="0 5" Name="participantName"/>
-            <Label Grid.Row="1" Grid.Column="0" Margin="10">Course Name:</Label>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="0 5" Name="courseName"/>
             <Label Grid.Row="2" Grid.Column="0" Margin="10"> Participant Role:</Label>
             <TextBox Grid.Row="2" Grid.Column="1" Margin="0 5" Name="participantRole"/>
             <Label Grid.Row="3" Grid.Column="0" Margin="10">Completion Date:</Label>

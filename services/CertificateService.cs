@@ -22,19 +22,14 @@ public class CertificateService
         var whiteBrush = XBrushes.White;
         var yellowBrush = new XSolidBrush(XColor.FromArgb(255, 215, 0));
 
-        // Draw the course name (max 1400 points wide)
-        var courseFont = FitTextToWidth(gfx, data.Course.ToUpper(), "Geologica", XFontStyle.Bold, 900, 90);
-        gfx.DrawString(data.Course.ToUpper(), courseFont, yellowBrush, new XPoint(1220, 485), XStringFormats.Center);
-
         // Draw the participant's name (max 1600 points wide)
         var nameFont = FitTextToWidth(gfx, data.Participant, "Geologica", XFontStyle.Bold, 900, 90);
         gfx.DrawString(data.Participant, nameFont, whiteBrush, new XPoint(1220, 980), XStringFormats.Center);
 
         gfx.DrawString(data.Participant, nameFont, whiteBrush, new XPoint(1220, 980), XStringFormats.Center);
-        gfx.DrawString(data.Course.ToUpper(), courseFont, yellowBrush, new XPoint(1220, 485), XStringFormats.Center);
         gfx.DrawString(data.Date.ToShortDateString(), dateFont, whiteBrush, new XPoint(1480, 1410), XStringFormats.Center);
         gfx.DrawString($"This Certificate is presented to {data.Participant} for their outstanding", smallFont, whiteBrush, new XPoint(1220, 1130), XStringFormats.Center);
-        gfx.DrawString($"completion of the {data.Course} course as {data.Role}.", smallFont, whiteBrush, new XPoint(1220, 1170), XStringFormats.Center);
+        gfx.DrawString($"completion of the Momentum Internship Program as {data.Role}.", smallFont, whiteBrush, new XPoint(1220, 1170), XStringFormats.Center);
 
         return document;
     }
