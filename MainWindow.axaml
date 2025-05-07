@@ -7,6 +7,7 @@
         Title="Graduation Certificate Generator"
         Width="600" Height="350">
     <StackPanel>
+        <Button HorizontalAlignment="Right" Click="ReEnterPassword_OnClick" Margin="10">Reenter Password</Button>
         <Grid Margin="10" ColumnDefinitions="Auto, Auto" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto" HorizontalAlignment="Center">
             <Label Grid.Row="0" Grid.Column="0" Margin="10">Participant Name:</Label>
             <TextBox Grid.Row="0" Grid.Column="1" Margin="0 5" Name="participantName"/>

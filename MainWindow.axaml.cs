@@ -57,6 +57,11 @@ public partial class MainWindow : Window
             Console.WriteLine(err);
         }
     }
+    
+    private async void ReEnterPassword_OnClick(object? sender, RoutedEventArgs e)
+    {
+        await OpenPasswordPrompt();
+    }
 
     private void GeneratePdfButton_OnClick(object? sender, RoutedEventArgs e)
     {
@@ -120,5 +125,14 @@ public partial class MainWindow : Window
         onboardingDate.Classes.Set("invalid", !onboardingDate.SelectedDate.HasValue);
         completionDate.Classes.Set("invalid", !completionDate.SelectedDate.HasValue);
         pdfDestinationButton.Classes.Set("invalid", string.IsNullOrWhiteSpace(folderPath));
+    }
+    
+    private async Task OpenPasswordPrompt()
+    {
+        var passwordPrompt = new PasswordPrompt();
+        if (Application.Current.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+        {
+            await passwordPrompt.ShowDialog(desktop.MainWindow);
+        }
     }
 }
