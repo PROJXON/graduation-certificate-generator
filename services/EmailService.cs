@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Net.Http;
 using System.Text.Json;
 
-namespace CanvasCertificateGenerator.Services;
+namespace GraduationCertificateGenerator.Services;
 
 public class EmailService
 {
