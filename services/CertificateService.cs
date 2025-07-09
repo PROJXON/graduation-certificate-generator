@@ -18,7 +18,6 @@ public class CertificateService
 
 
         var whiteBrush = XBrushes.White;
-        var yellowBrush = new XSolidBrush(XColor.FromArgb(255, 215, 0));
 
         var smallFont = new XFont("Roboto", 30, XFontStyle.Regular);
         var dateFont = new XFont("Roboto", 38, XFontStyle.Regular);
