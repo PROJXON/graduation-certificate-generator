@@ -2,6 +2,7 @@ namespace GraduationCertificateGenerator.Services;
 
 using PdfSharpCore.Pdf;
 using PdfSharpCore.Drawing;
+using System.Globalization;
 
 public class CertificateService
 {
@@ -25,8 +26,10 @@ public class CertificateService
 
         gfx.DrawString(data.Participant, nameFont, whiteBrush, new XPoint(990, 1010), XStringFormats.Center);
         gfx.DrawString($"This Certificate is presented to {data.Participant} for their outstanding completion of", smallFont, whiteBrush, new XPoint(990, 1160), XStringFormats.Center);
-        gfx.DrawString($"the Momentum Internship Program as {data.Role} from {data.StartDate.ToShortDateString()} to {data.EndDate.ToShortDateString()}.", smallFont, whiteBrush, new XPoint(990, 1200), XStringFormats.Center);
-        gfx.DrawString(data.EndDate.ToShortDateString(), dateFont, whiteBrush, new XPoint(1285, 1325), XStringFormats.Center);
+        gfx.DrawString(
+            $"the Momentum Internship Program as {data.Role} from {data.StartDate.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture)} to {data.EndDate.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture)}.",
+            smallFont, whiteBrush, new XPoint(990, 1200), XStringFormats.Center);
+        gfx.DrawString(data.EndDate.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture), dateFont, whiteBrush, new XPoint(1285, 1325), XStringFormats.Center);
 
         return document;
     }
