@@ -1,3 +1,6 @@
+using System;
+using System.IO;
+
 namespace GraduationCertificateGenerator.Services;
 
 using PdfSharpCore.Pdf;
@@ -14,7 +17,7 @@ public class CertificateService
         page.Height = XUnit.FromPoint(1545);
         using var gfx = XGraphics.FromPdfPage(page);
 
-        using var background = XImage.FromFile("./assets/Template.png");
+        using var background = XImage.FromFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "assets", "Template.png"));
         gfx.DrawImage(background, 0, 0, page.Width, page.Height);
 
 
